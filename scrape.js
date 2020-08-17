@@ -10,8 +10,8 @@ const emailId="<Your-EmailId>";
 const password="<Your-Password>";
 
 //your investments codes
-sipMfCodes = ["120505", "120503", "120465", "132756", "118834", "135781"]; 
-liqMfCodes = ["118560","120513","120676","119523","133810"];
+sipMfCodes = ["120505", "120503"]; 
+liqMfCodes = ["118560","120513"];
 
 //get today's date
 today = new Date();

@@ -13,12 +13,14 @@ const password="<Your-Password>";
 sipMfCodes = ["120505", "120503", "120465", "132756", "118834", "135781"]; 
 liqMfCodes = ["118560","120513","120676","119523","133810"];
 
+//get today's date
 today = new Date();
 dd = String(today.getDate()).padStart(2, '0');
 mm = String(today.getMonth() + 1).padStart(2, '0');
 yyyy = today.getFullYear();
 today = dd+"-"+mm+"-"+yyyy;
 
+//function to calculate mutual fund values
 mfCalculation =(datas,mfCodes,workbook,sheet) => {
 	Values=[];
 	Values.push(today);
@@ -34,6 +36,7 @@ mfCalculation =(datas,mfCodes,workbook,sheet) => {
 	cellStyling(Values,workbook,sheet);
 }
 
+//function to calculate each stock's current value
 stocksCalculation = (items,workbook,sheet) => {
 	stocks={};
 	for (item in items) {
@@ -65,6 +68,7 @@ stocksCalculation = (items,workbook,sheet) => {
 	cellStyling(Values,workbook,sheet);
 }
 
+//style cell depending on its values compared to last day's data
 cellStyling = (Values,workbook,sheet) => {
 	worksheet= workbook.getWorksheet(sheet);
 	count=worksheet.rowCount;

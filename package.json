@@ -1,0 +1,15 @@
+{
+  "name": "scrape",
+  "version": "1.0.0",
+  "description": "scrape groww.in investement's data",
+  "main": "scrape.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Navdeep Virdi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "exceljs": "^4.1.1"
+  }
+}

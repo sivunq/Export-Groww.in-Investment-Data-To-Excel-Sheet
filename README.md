@@ -1,6 +1,16 @@
 # Export-Groww.in-Investment-Data-To-Excel-Sheet
 Login into groww.in using your credentials and scrape your mutual funds' investement data from Groww.in to excel sheet for everyday tracking.
 
+# Steps To Use:
+1. Install dependencies i.e use "npm install" in "package.json" folder.
+2. 
+
+
+
+
+
+
+
 Followings are my learnings from this small project:
 1. Used chrome developer tools's network tab to identify url,data & request payload used by groww.in platform for authentication and data retrieval from their database.
 2. Used various core ES6 concepts of Javascipt such as promises, asyc/await.

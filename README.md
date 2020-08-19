@@ -8,5 +8,8 @@ Followings are my learnings from this small project:
 4. Used debugging techniques to debug my code till completion.
 5. Learnt to use Postman for interacting with endpoint data url of Groww.in
 
+How to contribute:
+I'm far from being a Javascript expert, contributions are more than welcome!
+
 "Full Explanation Coming Soon"
  

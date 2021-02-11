@@ -1,7 +1,7 @@
 # Export-Groww.in-Investment-Data-To-Excel-Sheet
 Login into groww.in using your credentials and scrape your mutual funds' investement data from Groww.in to excel sheet for everyday tracking.
 
-# Steps To Use <to-do>:
+# Steps To Use (to-do):
 1. Install dependencies i.e use "npm install" in "package.json" folder.
 2. 
 

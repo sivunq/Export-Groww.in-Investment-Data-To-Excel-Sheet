@@ -102,6 +102,26 @@ cellStyling = (Values,workbook,sheet) => {
 	});
 }
 
+async function getData() { 
+	//MutualFunds
+	 await axios(mfUrl,config)
+		.then(response => {
+			datas=response.data.mf_dashboard.investments.internal_investment.portfolio_schemes;
+			mfCalculation(datas,sipMfCodes,workbook,'MutualFunds');
+			mfCalculation(datas,liqMfCodes,workbook,'LiquidFunds');
+		}).catch(err => console.error(err));
+	console.log("Mutual Funds Done.... ");
+	//Stocks
+	await axios(stocksUrl,config)
+		.then(response => {
+			items = response.data.holdingList;
+			stocksCalculation(items,workbook,'CurrentStocks');
+		}).catch(err => console.error(err));
+	console.log("Stocks Done.... ");
+
+	workbook.xlsx.writeFile('FinTrack.xlsx');
+	}
+
 //login into groww.in profile
 axios.post(loginUrl, {"userId": emailId, "password": password})
   .then(response => {
@@ -109,26 +129,6 @@ axios.post(loginUrl, {"userId": emailId, "password": password})
 	workbook = new Excel.Workbook();
 	workbook.xlsx.readFile('FinTrack.xlsx')
 	.then(() => {
-		
-		async function getData() { 
-			//MutualFunds
-			 await axios(mfUrl,config)
-				.then(response => {
-					datas=response.data.mf_dashboard.investments.internal_investment.portfolio_schemes;
-					mfCalculation(datas,sipMfCodes,workbook,'MutualFunds');
-					mfCalculation(datas,liqMfCodes,workbook,'LiquidFunds');
-				}).catch(err => console.error(err));
-			console.log("Mutual Funds Done.... ");
-			//Stocks
-			await axios(stocksUrl,config)
-				.then(response => {
-					items = response.data.holdingList;
-					stocksCalculation(items,workbook,'CurrentStocks');
-				}).catch(err => console.error(err));
-			console.log("Stocks Done.... ");
-			
-			workbook.xlsx.writeFile('FinTrack.xlsx');
-		}
 		getData();
 	}).catch(err => console.error(err));
   }).catch(err => console.error(err));

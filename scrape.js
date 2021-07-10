@@ -102,7 +102,7 @@ cellStyling = (Values,workbook,sheet) => {
 	});
 }
 
-async function getData() { 
+getData= async () => { 
 	//MutualFunds
 	 await axios(mfUrl,config)
 		.then(response => {
